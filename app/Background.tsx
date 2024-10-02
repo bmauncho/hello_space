@@ -1,22 +1,48 @@
 "use client";
-import React, { useState } from "react";
+// components/Background.tsx
+import React from "react";
+import useBackgroundSettings from "./hooks/useBackgroundSettings";
+import { usePathname } from "next/navigation";
+import Hero from "./components/Hero";
+
 interface BackgroundProps {
   children: React.ReactNode;
 }
+
 const Background: React.FC<BackgroundProps> = ({ children }) => {
-  const [backgroundImage, setBackgroundImage] = useState("/images/idle_bg.png");
+  const {
+    backgroundImage,
+    backgroundHeight,
+    backgroundHeightPercentage,
+    setBackgroundImage,
+  } = useBackgroundSettings();
+
+  const currentPath = usePathname(); // Call usePathname once at the top
+
+  const handleMouseEnter = () => {
+    if (currentPath === "/") {
+      setBackgroundImage("/images/background.png");
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (currentPath === "/") {
+      setBackgroundImage("/images/idle_bg.png");
+    }
+  };
+
   return (
     <div
       style={{
         backgroundImage: `url('${backgroundImage}')`,
         backgroundSize: "cover",
-        height: "100vh",
+        height: backgroundHeight,
         width: "100%",
         transition: "background-image 0.5s ease, opacity 0.5s ease",
         opacity: 1,
       }}
-      onMouseEnter={() => setBackgroundImage("/images/background.png")}
-      onMouseLeave={() => setBackgroundImage("/images/idle_bg.png")}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div
         style={{
@@ -24,12 +50,13 @@ const Background: React.FC<BackgroundProps> = ({ children }) => {
           top: 0,
           left: 0,
           width: "100%",
-          height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.4)", // adjust the overlay color and opacity
-          zIndex: 1, // ensure the overlay is on top of the background image
+          height: backgroundHeightPercentage,
+          backgroundColor: "rgba(0, 0, 0, 0.4)",
+          zIndex: 0,
         }}
       ></div>
-      {children} {/* Add the children prop here */}
+      {children}
+      <Hero />
     </div>
   );
 };

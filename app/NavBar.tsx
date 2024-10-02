@@ -41,10 +41,10 @@ const NavBar = () => {
   return (
     <div
       className={classNames(
-        "grid grid-flow-col auto-cols-auto px-16 m-auto box-border sticky top-0 transition-colors ease-out duration-400",
+        "grid grid-flow-col auto-cols-auto px-16 m-auto box-border sticky top-0 transition-all duration-500 ease-in-out",
         {
-          "bg-transparent": !scrolled,
-          "bg-white": scrolled,
+          "bg-white bg-opacity-0": !scrolled, // Transparent background with no opacity
+          "bg-white bg-opacity-100": scrolled, // Opaque white background
         }
       )}
       style={{
