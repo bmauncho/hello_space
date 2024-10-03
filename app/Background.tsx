@@ -1,15 +1,11 @@
 "use client";
 // components/Background.tsx
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import useBackgroundSettings from "./hooks/useBackgroundSettings";
 import { usePathname } from "next/navigation";
 import Hero from "./components/Hero";
 
-interface BackgroundProps {
-  children: React.ReactNode;
-}
-
-const Background: React.FC<BackgroundProps> = ({ children }) => {
+const Background = ({ children }: PropsWithChildren) => {
   const {
     backgroundImage,
     backgroundHeight,
