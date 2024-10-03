@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "./NavBar";
 import Background from "./Background";
 import Footer from "./Footer";
+import MoveToTop from "./components/MoveToTop";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,6 +36,7 @@ export default function RootLayout({
           <NavBar />
         </Background>
         <main className="p-5">{children}</main>
+        <MoveToTop />
         <Footer />
       </body>
     </html>
