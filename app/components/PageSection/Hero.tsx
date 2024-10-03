@@ -1,9 +1,9 @@
 import React from "react";
-import HeroBtn from "./HeroBtn";
+import HeroBtn from "../Buttons/HeroBtn";
 import { Baskervville, Libre_Baskerville } from "next/font/google";
 import classNames from "classnames";
 import { usePathname } from "next/navigation";
-import usePageName from "../hooks/usePageName";
+import usePageName from "../../hooks/usePageName";
 import Link from "next/link";
 
 const heroContainerClass = " flex-col space-y-6 px-64 mb-12"; // Adjust the width and padding as needed

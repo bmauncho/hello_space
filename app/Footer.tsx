@@ -22,7 +22,7 @@ const Footer = () => {
     });
   };
   return (
-    <div className="p-5">
+    <div className="p-5 mt-12">
       <div className={containerClass}>
         <div className={logoIconClass}>
           <div>

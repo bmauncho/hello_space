@@ -1,3 +1,11 @@
+import ContactDetails from "./components/PageSection/ContactDetails";
+
 export default function Home() {
-  return <div>Hellospace</div>;
+  return (
+    <div>
+      <div>
+        <ContactDetails />
+      </div>
+    </div>
+  );
 }

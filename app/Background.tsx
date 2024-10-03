@@ -3,7 +3,7 @@
 import React, { PropsWithChildren } from "react";
 import useBackgroundSettings from "./hooks/useBackgroundSettings";
 import { usePathname } from "next/navigation";
-import Hero from "./components/Hero";
+import Hero from "./components/PageSection/Hero";
 
 const Background = ({ children }: PropsWithChildren) => {
   const {

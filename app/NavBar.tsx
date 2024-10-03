@@ -4,11 +4,15 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import Image from "next/image";
-import { Poppins } from "next/font/google";
-import NavBarBtn from "./components/NavBarBtn";
+import { Baskervville, Poppins } from "next/font/google";
+import NavBarBtn from "./components/Buttons/NavBarBtn";
 
 const poppins = Poppins({ weight: "400", style: "normal", subsets: ["latin"] });
-
+const baskervile = Baskervville({
+  weight: "400",
+  style: "normal",
+  subsets: ["latin"],
+});
 const NavBar = () => {
   const currentPath = usePathname();
 
@@ -67,7 +71,13 @@ const NavBar = () => {
             {links.map((link) =>
               link.label === "BOOK A CONSULTATION" ? (
                 <Link key={link.href} href={link.href}>
-                  <NavBarBtn>{link.label}</NavBarBtn>
+                  <NavBarBtn>
+                    <i
+                      className={classNames(baskervile.className, "font-bold")}
+                    >
+                      {link.label}
+                    </i>
+                  </NavBarBtn>
                 </Link>
               ) : (
                 <Link
