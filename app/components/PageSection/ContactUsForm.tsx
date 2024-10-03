@@ -26,7 +26,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="w-full lg:w-1/2 p-10 flex flex-col justify-start">
+    <div className="w-full lg:w-1/2 p-10 flex flex-col justify-start mb-0">
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-sm contact-info mb-2 text-gray-700">

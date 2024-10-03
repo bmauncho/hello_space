@@ -53,7 +53,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="flex justify-center items-start min-h-screen">
+    <div className="flex justify-center items-start min-h-screen mb-0">
       <div className="w-full max-w-4xl flex flex-wrap p-10 items-start justify-center">
         {/* Contact Details Section */}
         <div className="w-full lg:w-1/2 p-10 flex flex-col justify-start">
