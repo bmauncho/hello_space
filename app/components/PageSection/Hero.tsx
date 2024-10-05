@@ -6,14 +6,17 @@ import { usePathname } from "next/navigation";
 import usePageName from "../../hooks/usePageName";
 import Link from "next/link";
 
-const heroContainerClass_Main = " flex-col py-40 mb-2"; // Adjust the width and padding as needed
-const heroContainerClass = " flex-col space-y-12 px-64 py-60 mb-12"; // Adjust the width and padding as needed
+const heroContainerClass_Main = "flex-col py-20 md:py-40 mb-2 z-[1]"; // Adjust padding for responsiveness
+const heroContainerClass =
+  "flex-col space-y-12 px-4 sm:px-16 md:px-32 lg:px-64 py-6 sm:py-6 md:py-12 lg:py-18 xl:py-36  mb-12 z-[1]"; // Adjust padding for responsiveness
 const headingClass =
-  " space-y-6 mt-12 text-7xl text-center text-[rgb(190,123,62)]";
-const headingClass_ = " space-y-6 mt-12 text-7xl text-center text-white";
-const paragraphClass = " space-y-6 mt-12 text-center text-white text-lg";
+  "space-y-6 mt-12 text-4xl md:text-5xl lg:text-7xl text-center text-[rgb(190,123,62)] z-[1]"; // Responsive text sizes
+const headingClass_ =
+  "space-y-6 mt-12 text-4xl md:text-5xl lg:text-7xl text-center text-white z-[1]"; // Responsive text sizes
+const paragraphClass =
+  "space-y-6 mt-12 text-center text-white text-sm sm:text-base md:text-lg z-[1]"; // Responsive text sizes
 const buttonClass =
-  " space-y-6 mt-12 font-bold h-12 w-24 rounded-lg text-white bg-[rgb(190,123,62)] transition-all hover:bg-[rgb(155,106,61)]";
+  "mt-12 font-bold h-10 w-20 md:h-12 md:w-24 rounded-lg text-white bg-[rgb(190,123,62)] transition-all hover:bg-[rgb(155,106,61)] z-[1]";
 
 const baskervile = Baskervville({
   weight: "400",
@@ -38,57 +41,30 @@ const Hero = () => {
   if (currentPath !== "/") {
     return (
       <div className={heroContainerClass_Main}>
-        <div
-          className="flex flex-col justify-center items-center"
-          style={{
-            zIndex: 1,
-          }}
-        >
-          <h1
-            className={classNames(headingClass_, libreBaskervile.className)}
-            style={{
-              zIndex: 1,
-            }}
-          >
+        <div className="flex flex-col justify-center items-center">
+          <h1 className={classNames(headingClass_, libreBaskervile.className)}>
             {pageName}
           </h1>
         </div>
       </div>
-    ); // Return nothing if it's not the homepage
+    );
   }
 
   return (
     <div className={heroContainerClass}>
-      <div
-        className="flex flex-col justify-center items-center"
-        style={{
-          zIndex: 1,
-        }}
-      >
+      <div className="flex flex-col justify-center items-center">
         <div className="flex justify-center">
           <p
             className={classNames(
               paragraphClass,
               libreBaskervile_normal.className
             )}
-            style={{
-              zIndex: 1,
-            }}
           >
             Casual & Everyday
           </p>
         </div>
-        <div
-          style={{
-            zIndex: 1,
-          }}
-        >
-          <h1
-            className={classNames(headingClass, libreBaskervile.className)}
-            style={{
-              zIndex: 1,
-            }}
-          >
+        <div className="z-[1]">
+          <h1 className={classNames(headingClass, libreBaskervile.className)}>
             Effortlessly blend comfort <br /> & style!
           </h1>
           <p
@@ -96,23 +72,16 @@ const Hero = () => {
               paragraphClass,
               libreBaskervile_normal.className
             )}
-            style={{
-              zIndex: 1,
-            }}
           >
             Effortlessly blend comfort and style with our Casual & Everyday
             collection,
-            <br /> featuring cozy sweaters, versatile denim, laid-back tees, and
-            relaxed-fit
-            <br /> joggers for your everyday adventures
+            <br className="hidden md:block" /> featuring cozy sweaters,
+            versatile denim, laid-back tees, and
+            <br className="hidden md:block" /> relaxed-fit joggers for your
+            everyday adventures
           </p>
         </div>
-        <div
-          className={buttonClass}
-          style={{
-            zIndex: 1,
-          }}
-        >
+        <div className={buttonClass}>
           <Link href="/shop">
             <HeroBtn>
               <p
@@ -120,9 +89,6 @@ const Hero = () => {
                   baskervile.className,
                   "justify-center items-center"
                 )}
-                style={{
-                  zIndex: 1,
-                }}
               >
                 Shop Now
               </p>
