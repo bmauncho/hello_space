@@ -6,11 +6,12 @@ import { usePathname } from "next/navigation";
 import usePageName from "../../hooks/usePageName";
 import Link from "next/link";
 
-const heroContainerClass = " flex-col space-y-6 px-64 mb-12"; // Adjust the width and padding as needed
+const heroContainerClass_Main = " flex-col py-40 mb-2"; // Adjust the width and padding as needed
+const heroContainerClass = " flex-col space-y-12 px-64 py-60 mb-12"; // Adjust the width and padding as needed
 const headingClass =
   " space-y-6 mt-12 text-7xl text-center text-[rgb(190,123,62)]";
 const headingClass_ = " space-y-6 mt-12 text-7xl text-center text-white";
-const paragraphClass = " space-y-6 mt-12 text-center text-white";
+const paragraphClass = " space-y-6 mt-12 text-center text-white text-lg";
 const buttonClass =
   " space-y-6 mt-12 font-bold h-12 w-24 rounded-lg text-white bg-[rgb(190,123,62)] transition-all hover:bg-[rgb(155,106,61)]";
 
@@ -36,7 +37,7 @@ const Hero = () => {
   // Only return content if the path is the homepage
   if (currentPath !== "/") {
     return (
-      <div className={heroContainerClass}>
+      <div className={heroContainerClass_Main}>
         <div
           className="flex flex-col justify-center items-center"
           style={{
@@ -66,7 +67,10 @@ const Hero = () => {
       >
         <div className="flex justify-center">
           <p
-            className={classNames(paragraphClass, baskervile.className)}
+            className={classNames(
+              paragraphClass,
+              libreBaskervile_normal.className
+            )}
             style={{
               zIndex: 1,
             }}

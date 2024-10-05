@@ -28,31 +28,33 @@ const Background = ({ children }: PropsWithChildren) => {
   };
 
   return (
-    <div
-      style={{
-        backgroundImage: `url('${backgroundImage}')`,
-        backgroundSize: "cover",
-        height: backgroundHeight,
-        width: "100%",
-        transition: "background-image 0.5s ease, opacity 0.5s ease",
-        opacity: 1,
-      }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div style={{ position: "relative", top: 0, left: 0 }}>
       <div
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
+          backgroundImage: `url('${backgroundImage}')`,
+          backgroundSize: "cover",
+          height: backgroundHeight,
           width: "100%",
-          height: backgroundHeightPercentage,
-          backgroundColor: "rgba(0, 0, 0, 0.4)",
-          zIndex: 0,
+          transition: "background-image 0.5s ease, opacity 0.5s ease",
+          opacity: 1,
         }}
-      ></div>
-      {children}
-      <Hero />
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: backgroundHeightPercentage,
+            backgroundColor: "rgba(0, 0, 0, 0.4)",
+            zIndex: 0,
+          }}
+        ></div>
+        <Hero />
+        {children}
+      </div>
     </div>
   );
 };

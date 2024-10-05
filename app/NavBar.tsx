@@ -4,15 +4,16 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import Image from "next/image";
-import { Baskervville, Poppins } from "next/font/google";
+import { Libre_Baskerville, Poppins } from "next/font/google";
 import NavBarBtn from "./components/Buttons/NavBarBtn";
 
 const poppins = Poppins({ weight: "400", style: "normal", subsets: ["latin"] });
-const baskervile = Baskervville({
+const libreBaskervile_normal = Libre_Baskerville({
   weight: "400",
   style: "normal",
   subsets: ["latin"],
 });
+
 const NavBar = () => {
   const currentPath = usePathname();
 
@@ -45,60 +46,77 @@ const NavBar = () => {
   return (
     <div
       className={classNames(
-        "grid grid-flow-col auto-cols-auto px-16 m-auto box-border sticky top-0 transition-all duration-500 ease-in-out",
-        {
-          "bg-white bg-opacity-0": !scrolled, // Transparent background with no opacity
-          "bg-white bg-opacity-100": scrolled, // Opaque white background
-        }
+        " sticky top-0 w-full " // Always have bg-white
       )}
       style={{
         zIndex: 2,
       }}
     >
-      <div className="grid box-border">
-        <Link href="/" className="ml-48">
-          <Image
-            src="/images/logo.png"
-            width={135}
-            height={135}
-            alt="Thelogo"
-          />
-        </Link>
-      </div>
-      <div className="grid box-border">
-        <nav className="flex space-x-12 mr-24 mb-5 px-5 h-30 items-center">
-          <ul className="flex space-x-12 items-center">
-            {links.map((link) =>
-              link.label === "BOOK A CONSULTATION" ? (
-                <Link key={link.href} href={link.href}>
-                  <NavBarBtn>
-                    <i
-                      className={classNames(baskervile.className, "font-bold")}
-                    >
-                      {link.label}
-                    </i>
-                  </NavBarBtn>
-                </Link>
-              ) : (
-                <Link
-                  key={link.href}
-                  className={classNames(poppins.className, {
-                    "text-[rgb(190,123,62)]":
-                      scrolled && link.href === currentPath,
-                    "text-zinc-600": scrolled && link.href !== currentPath,
-                    "text-white": !scrolled && link.href === currentPath,
-                    "text-zinc-300": !scrolled && link.href !== currentPath,
-                    "hover:text-[rgb(190,123,62)] transition-colors ease-out duration-400":
-                      true,
-                  })}
-                  href={link.href}
-                >
-                  {link.label}
-                </Link>
-              )
-            )}
-          </ul>
-        </nav>
+      <div className="absolute top-0 left-0 w-full">
+        <div
+          className={classNames(
+            " bg-white transition-all duration-500 ease-in-out",
+            {
+              "bg-opacity-0": !scrolled, // Fully transparent when not scrolled
+              "bg-opacity-100": scrolled, // Fully opaque when scrolled
+            }
+          )}
+        >
+          <div className="flex flex-row justify-center items-center">
+            {/* Logo on the left */}
+            <div className="flex items-center px-20">
+              <Link href="/" className="mr-auto">
+                <Image
+                  src="/images/logo.png"
+                  width={125}
+                  height={125}
+                  alt="Thelogo"
+                />
+              </Link>
+            </div>
+            <div className="flex items-center px-24">
+              {/* Navigation in the center */}
+              <nav className="flex">
+                <ul className="flex space-x-16 items-center">
+                  {links.map((link) =>
+                    link.label === "BOOK A CONSULTATION" ? (
+                      <Link key={link.href} href={link.href}>
+                        <NavBarBtn>
+                          <i
+                            className={classNames(
+                              libreBaskervile_normal.className,
+                              "font-bold text-lg"
+                            )}
+                          >
+                            {link.label}
+                          </i>
+                        </NavBarBtn>
+                      </Link>
+                    ) : (
+                      <Link
+                        key={link.href}
+                        className={classNames(poppins.className, {
+                          "text-[rgb(190,123,62)]":
+                            scrolled && link.href === currentPath,
+                          "text-zinc-600":
+                            scrolled && link.href !== currentPath,
+                          "text-white": !scrolled && link.href === currentPath,
+                          "text-zinc-300":
+                            !scrolled && link.href !== currentPath,
+                          "hover:text-[rgb(190,123,62)] transition-colors ease-out duration-400":
+                            true,
+                        })}
+                        href={link.href}
+                      >
+                        {link.label}
+                      </Link>
+                    )
+                  )}
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

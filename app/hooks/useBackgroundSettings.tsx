@@ -21,7 +21,7 @@ const useBackgroundSettings = () => {
       case "/contactUs":
         setBackgroundImage("/images/background.png");
         setBackgroundHeight("50vh");
-        setBackgroundHeightPercentage("50%");
+        setBackgroundHeightPercentage("100%");
         break;
     }
   }, [currentPath]);
