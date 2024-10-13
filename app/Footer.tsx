@@ -72,9 +72,17 @@ const Footer = () => {
         </div>
         <div className="flex justify-center border-t-2 border-[rgba(190,124,62,0.25)] mt-12">
           <p className="flex mt-3 text-[rgba(190,124,62,1)]">
-            Copyright © <span className="px-1 text-zinc-500">HelloSpace</span>
-            .All rights reserved.
+            Copyright ©
+            <span className="px-1 text-zinc-500 transition-all hover:text-[rgba(190,124,62,1)]">
+              HelloSpace
+            </span>
+            .All rights reserved...
           </p>
+          <div className="flex justify-center transition-all delay-150 hover:scale-110">
+            <Link href="https://bmauncho.github.io/BradleyMauncho.github.io/">
+              <button className="mt-3 ">🚀</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

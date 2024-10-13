@@ -3,12 +3,11 @@ import React, { useEffect, useState } from "react";
 
 const FurniturePage = () => {
   const images = [
-    "https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg",
-    "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
-    "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg",
-    "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg",
-    "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg",
-    "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg",
+    "/images/Furniture_1.png",
+    "/images/Furniture_2.png",
+    "/images/Furniture_3.png",
+    "/images/Furniture_4.png",
+    "/images/Furniture_5.png",
   ];
 
   // State for current image index
