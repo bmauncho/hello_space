@@ -17,7 +17,7 @@ const containerClass =
 const headerClass = "text-4xl text-gray-700 mb-12";
 const contactDetailsClass = "flex space-x-8";
 const contactItemClass =
-  "bg-white p-8 rounded-lg shadow-md flex flex-col items-center";
+  "bg-white p-8 rounded-lg shadow-md flex flex-col items-center transition-all delay-150 hover:scale-110";
 const contactItemContentClass = "flex flex-col items-center space-y-4"; // new class
 const contactItemIconClass = "text-4xl mb-2 text-zinc-500"; // updated class
 const contactItemTittle =

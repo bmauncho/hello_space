@@ -10,7 +10,7 @@ import { BiLogoTiktok } from "react-icons/bi";
 const containerClass = "flex-col space-y-12 px-64";
 const logoIconClass = "flex flex-col justify-center items-center";
 const iconClass =
-  "h-12 w-12 bg-zinc-300 rounded-full flex justify-center items-center group hover:bg-[rgba(190,124,62,0.45)] transition-all duration-300"; // Added group class
+  "h-12 w-12 bg-zinc-300 rounded-full flex justify-center items-center group hover:bg-[rgba(190,124,62,0.45)] transition-all delay-150 duration-300 hover:scale-125"; // Added group class
 const icon =
   "text-xl text-[rgba(190,124,62,1)] group-hover:text-white transition-colors duration-300"; // Added group-hover:text-white
 
@@ -25,7 +25,7 @@ const Footer = () => {
     <div className="p-5 bg-white">
       <div className={containerClass}>
         <div className={logoIconClass}>
-          <div>
+          <div className="transition-all delay-150 hover:scale-110">
             <button onClick={scrollToTop}>
               <Link href="/">
                 <Image
@@ -71,7 +71,10 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex justify-center border-t-2 border-[rgba(190,124,62,0.25)] mt-12">
-          <p className="flex mt-3">copyright@2024</p>
+          <p className="flex mt-3 text-[rgba(190,124,62,1)]">
+            Copyright © <span className="px-1 text-zinc-500">HelloSpace</span>
+            .All rights reserved.
+          </p>
         </div>
       </div>
     </div>

@@ -35,11 +35,11 @@ const AboutUs = () => {
             </h1>
           </div>
           <p className="text-gray-600 text-lg leading-relaxed">
-            Hackney started as a small interior design firm in downtown
-            Michigan, aiming to help home buyers to make do with the new space
-            that they had acquired. It soon became obvious that it would make
-            sense to help our clients see beyond the walls and floor plans, and
-            be there with them from the get-go.
+            Hello Space started as a small interior design firm in
+            Nairobi,Kenya, aiming to help home buyers to make do with the new
+            space that they had acquired. It soon became obvious that it would
+            make sense to help our clients see beyond the walls and floor plans,
+            and be there with them from the get-go.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mt-4">
             Currently, we offer house realtor, interior design, and architecture

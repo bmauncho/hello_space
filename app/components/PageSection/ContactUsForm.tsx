@@ -82,7 +82,7 @@ const ContactForm: React.FC = () => {
         </div>
         <button
           type="submit"
-          className="form-button w-full bg-gradient-to-r from-blue-500 to-green-400 text-white p-3 rounded-lg hover:bg-gradient-to-l transition duration-300 shadow-md"
+          className="form-button w-full bg-gradient-to-r from-blue-500 to-green-400 text-white p-3 rounded-lg hover:bg-gradient-to-l transition delay-150 duration-300 shadow-md"
         >
           Send Message
         </button>

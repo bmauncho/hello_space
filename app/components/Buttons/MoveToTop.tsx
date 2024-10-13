@@ -32,7 +32,7 @@ const MoveToTop = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="bg-[rgba(190,124,62,1)] rounded-full h-12 w-12 flex items-center justify-center text-white shadow-lg hover:bg-[rgba(160,104,52,1)] transition"
+          className="bg-[rgba(190,124,62,1)] rounded-full h-12 w-12 flex items-center justify-center text-white shadow-lg hover:bg-[rgba(160,104,52,1)] transition-all delay-150 hover:scale-110"
         >
           <TiArrowUpThick className="text-white text-2xl" />
         </button>

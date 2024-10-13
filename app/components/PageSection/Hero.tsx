@@ -16,7 +16,7 @@ const headingClass_ =
 const paragraphClass =
   "space-y-6 mt-12 text-center text-white text-sm sm:text-base md:text-lg z-[1]"; // Responsive text sizes
 const buttonClass =
-  "mt-12 font-bold h-10 w-20 md:h-12 md:w-24 rounded-lg text-white bg-[rgb(190,123,62)] transition-all hover:bg-[rgb(155,106,61)] z-[1]";
+  "mt-12 font-bold h-10 w-20 md:h-12 md:w-24 rounded-lg text-white bg-[rgb(190,123,62)] transition-all delay-150 hover:bg-[rgb(155,106,61)] z-[1] hover:scale-125";
 
 const baskervile = Baskervville({
   weight: "400",

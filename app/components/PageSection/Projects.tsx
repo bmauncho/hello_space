@@ -6,7 +6,7 @@ import { Libre_Baskerville } from "next/font/google";
 import classNames from "classnames";
 
 const buttonClass =
-  "mt-12 font-bold h-10 w-20 md:h-12 md:w-24 rounded-lg text-center text-white bg-[rgb(190,123,62)] transition-all hover:bg-[rgb(155,106,61)] z-[1]";
+  "mt-12 font-bold h-10 w-20 md:h-12 md:w-24 rounded-lg text-center text-white bg-[rgb(190,123,62)] transition-all delay-150 hover:bg-[rgb(155,106,61)] z-[1] hover:scale-125";
 const libreBaskervile_normal = Libre_Baskerville({
   weight: "400",
   style: "normal",
@@ -40,7 +40,7 @@ const Projects = () => {
               width={300}
               height={300}
               alt="projectsimg"
-              className="rounded-lg"
+              className="rounded-lg w-full"
             />
           </div>
           <div>
@@ -52,8 +52,7 @@ const Projects = () => {
             >
               Explore our exquisite
               <br />
-              Furniture Collection
-              <br /> now!
+              Project Collection!
             </h1>
           </div>
           <div className="flex">
@@ -63,9 +62,9 @@ const Projects = () => {
                 buttonClass
               )}
             >
-              <Link href={"/furniture"}>
+              <Link href={"/projects"}>
                 <ProjectsBtn>
-                  <i>Furniture</i>
+                  <i>Projects</i>
                 </ProjectsBtn>
               </Link>
             </div>

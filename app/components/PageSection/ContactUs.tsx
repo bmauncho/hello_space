@@ -73,7 +73,7 @@ const ContactUs = () => {
           >
             {contactUsDetails.map((detail) => (
               <div key={detail.id} className="flex flex-row items-center">
-                <div className="mr-4 bg-[#e6cac4] h-12 w-12 rounded-full flex justify-center items-center group">
+                <div className="mr-4 bg-[#e6cac4] h-12 w-12 rounded-full flex justify-center items-center group transition-all delay-150 hover:scale-110">
                   {/* Only wrap in <a> if there's an href */}
                   {getHref(detail) ? (
                     <a href={getHref(detail)} className="text-zinc-600">
