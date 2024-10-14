@@ -26,6 +26,22 @@ const NavBar = () => {
   ];
 
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    // Check if the screen is mobile-sized
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,78 +59,122 @@ const NavBar = () => {
     };
   }, []);
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <div
-      className={classNames(
-        " sticky top-0 w-full " // Always have bg-white
-      )}
-      style={{
-        zIndex: 2,
-      }}
-    >
+    <div className="sticky top-0 w-full z-50">
       <div className="absolute top-0 left-0 w-full">
         <div
           className={classNames(
-            " bg-white transition-all duration-500 ease-in-out",
+            "transition-all duration-500 ease-in-out bg-white",
             {
-              "bg-opacity-0": !scrolled, // Fully transparent when not scrolled
-              "bg-opacity-100": scrolled, // Fully opaque when scrolled
+              "bg-opacity-0":
+                (isMobile && !scrolled && !isMobileMenuOpen) ||
+                (!isMobile && !scrolled),
+              "bg-opacity-100":
+                (isMobileMenuOpen && isMobile && isMobileMenuOpen) ||
+                (!isMobile && scrolled),
             }
           )}
         >
-          <div className="flex flex-row justify-center items-center">
+          <div className="flex justify-between items-center px-4 py-2 custom-740:px-8 custom-915:px-12 custom-932:px-12 lg:px-20">
             {/* Logo on the left */}
-            <div className="flex items-center px-20">
+            <div className="flex items-center">
               <Link href="/" className="mr-auto">
                 <Image
                   src="/images/logo.png"
+                  alt="Thelogo"
                   width={125}
                   height={125}
-                  alt="Thelogo"
+                  className={classNames({
+                    "w-16 h-16 lg:w-32 lg:h-32": !isMobileMenuOpen,
+                    "w-10 h-10 ": isMobileMenuOpen,
+                  })} // Responsive logo size for mobile and desktop
                 />
               </Link>
             </div>
-            <div className="flex items-center px-24">
-              {/* Navigation in the center */}
-              <nav className="flex">
-                <ul className="flex space-x-16 items-center">
-                  {links.map((link) =>
-                    link.label === "BOOK A CONSULTATION" ? (
-                      <Link key={link.href} href={link.href}>
-                        <NavBarBtn>
-                          <i
-                            className={classNames(
-                              libreBaskervile_normal.className,
-                              "font-bold text-lg"
-                            )}
-                          >
-                            {link.label}
-                          </i>
-                        </NavBarBtn>
-                      </Link>
-                    ) : (
-                      <Link
-                        key={link.href}
-                        className={classNames(poppins.className, {
-                          "text-[rgb(190,123,62)]":
-                            scrolled && link.href === currentPath,
-                          "text-zinc-600":
-                            scrolled && link.href !== currentPath,
-                          "text-white": !scrolled && link.href === currentPath,
-                          "text-zinc-300":
-                            !scrolled && link.href !== currentPath,
-                          "hover:text-[rgb(190,123,62)] transition-colors ease-out duration-400":
-                            true,
-                        })}
-                        href={link.href}
-                      >
-                        {link.label}
-                      </Link>
-                    )
-                  )}
-                </ul>
-              </nav>
+
+            {/* Hamburger icon for mobile */}
+            <div className="lg:hidden">
+              <button
+                onClick={toggleMobileMenu}
+                className="text-zinc-600 focus:outline-none"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d={
+                      isMobileMenuOpen
+                        ? "M6 18L18 6M6 6l12 12"
+                        : "M4 6h16M4 12h16M4 18h16"
+                    }
+                  />
+                </svg>
+              </button>
             </div>
+
+            {/* Navigation links */}
+            <nav
+              className={classNames(
+                "lg:flex items-center justify-center",
+                {
+                  hidden: !isMobileMenuOpen, // Hide links on mobile when menu is closed
+                  block: isMobileMenuOpen, // Show links on mobile when menu is open
+                },
+                "lg:block" // Always show on larger screens
+              )}
+            >
+              <ul className="flex flex-col lg:flex-row lg:space-x-16 items-center space-y-4 lg:space-y-0 text-center">
+                {links.map((link) =>
+                  link.label === "BOOK A CONSULTATION" ? (
+                    <Link key={link.href} href={link.href}>
+                      <NavBarBtn isMobileMenuOpen={isMobileMenuOpen}>
+                        <i
+                          className={classNames(
+                            libreBaskervile_normal.className,
+                            {
+                              "font-bold text-lg": !isMobileMenuOpen,
+                              "font-bold text-xs": isMobileMenuOpen,
+                            }
+                          )}
+                        >
+                          {link.label}
+                        </i>
+                      </NavBarBtn>
+                    </Link>
+                  ) : (
+                    <Link
+                      key={link.href}
+                      className={classNames(poppins.className, {
+                        "text-[rgb(190,123,62)]":
+                          scrolled && link.href === currentPath,
+                        "text-zinc-600": scrolled && link.href !== currentPath,
+                        "text-[rgb(190,123,60)]":
+                          !scrolled && link.href === currentPath,
+                        "text-zinc-300": !scrolled && link.href !== currentPath,
+                        "hover:text-[rgb(190,123,62)] transition-colors ease-out duration-400":
+                          true,
+                        "text-lg": !isMobileMenuOpen,
+                        "text-xs": isMobileMenuOpen,
+                      })}
+                      href={link.href}
+                    >
+                      {link.label}
+                    </Link>
+                  )
+                )}
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
