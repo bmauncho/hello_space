@@ -21,13 +21,13 @@ const Funiture = () => {
   const BackgroundImage = "/images/funiture_bg.png";
 
   const [scrolled, setScrolled] = useState(false);
-  const getWindowScrollPosition = () => ({
-    x: window.scrollX,
-    y: window.scrollY,
-  });
+  // const getWindowScrollPosition = () => ({
+  //   x: window.scrollX,
+  //   y: window.scrollY,
+  // });
 
-  getWindowScrollPosition();
-  console.log(getWindowScrollPosition());
+  // getWindowScrollPosition();
+  // console.log(getWindowScrollPosition());
   const scrollThreshold = useScrollThreshold(); // Get the current scroll threshold
 
   useEffect(() => {
@@ -45,9 +45,7 @@ const Funiture = () => {
     handleScroll();
 
     return () => {
-      window.removeEventListener("scroll", () => {
-        console.log(getWindowScrollPosition());
-      });
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [scrollThreshold]); // Add scrollThreshold to dependency array
 

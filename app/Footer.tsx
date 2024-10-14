@@ -6,7 +6,9 @@ import { IoLogoTwitter } from "react-icons/io5";
 import { TiSocialFacebook } from "react-icons/ti";
 import { BsInstagram } from "react-icons/bs";
 import { BiLogoTiktok } from "react-icons/bi";
-
+import { Poppins } from "next/font/google";
+import classNames from "classnames";
+const poppins = Poppins({ weight: "400", style: "normal", subsets: ["latin"] });
 const containerClass = "flex-col space-y-12 px-64";
 const logoIconClass = "flex flex-col justify-center items-center";
 const iconClass =
@@ -70,13 +72,18 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center border-t-2 border-[rgba(190,124,62,0.25)] mt-12">
+        <div
+          className={classNames(
+            poppins.className,
+            "flex justify-center border-t-2 border-[rgba(190,124,62,0.25)] mt-12"
+          )}
+        >
           <p className="flex mt-3 text-[rgba(190,124,62,1)]">
             Copyright ©
             <span className="px-1 text-zinc-500 transition-all hover:text-[rgba(190,124,62,1)]">
-              HelloSpace
+              HelloSpace.
             </span>
-            .All rights reserved...
+            All rights reserved...
           </p>
           <div className="flex justify-center transition-all delay-150 hover:scale-110">
             <Link href="https://bmauncho.github.io/BradleyMauncho.github.io/">

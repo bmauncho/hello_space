@@ -17,8 +17,8 @@ const AboutUs = () => {
         <div className="md:w-1/2">
           <Image
             src="/images/AboutUs_.png"
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             alt="AboutUs_"
             className="rounded-lg"
           />
