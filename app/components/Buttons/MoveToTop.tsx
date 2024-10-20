@@ -28,7 +28,7 @@ const MoveToTop = () => {
   }, []);
 
   return (
-    <div className=" fixed pr-2 bottom-10 right-8 md:right-15 md:bottom-12 md:pr-10">
+    <div className=" fixed pr-10 bottom-10 right-8 md:right-15 md:bottom-12 md:pr-10">
       {isVisible && (
         <button
           onClick={scrollToTop}

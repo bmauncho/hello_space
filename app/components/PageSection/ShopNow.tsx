@@ -8,12 +8,12 @@ const buttonClass =
   "mt-6 md:mt-12 font-bold h-10 w-24 md:h-12 md:w-28 rounded-lg text-center text-white bg-[rgb(190,123,62)] transition-all delay-150 hover:bg-[rgb(155,106,61)] z-[1] hover:scale-125";
 
 const libreBaskervile_normal = Libre_Baskerville({
-  weight: "400",
+  weight: "700",
   style: "normal",
   subsets: ["latin"],
 });
 const libreBaskervile = Libre_Baskerville({
-  weight: "400",
+  weight: "700",
   style: "italic",
   subsets: ["latin"],
 });
@@ -29,7 +29,7 @@ const ShopNow = () => {
         }}
       >
         <div className="flex justify-start items-start w-full h-full">
-          <div className="flex flex-col justify-center items-start space-y-6 p-4  ml-64 sm:p-6 lg:p-12 min-h-screen">
+          <div className="flex flex-col justify-center items-start space-y-6 p-4 md:p-6 lg:p-12 ml-4 sm:ml-8 lg:ml-64 min-h-screen">
             <div>
               <i
                 className={classNames(
@@ -44,7 +44,7 @@ const ShopNow = () => {
               <h1
                 className={classNames(
                   libreBaskervile.className,
-                  "text-lg sm:text-4xl lg:text-6xl font-normal text-left text-white"
+                  "text-2xl sm:text-4xl lg:text-6xl font-normal text-left text-white"
                 )}
               >
                 Professional
@@ -56,7 +56,7 @@ const ShopNow = () => {
               <i
                 className={classNames(
                   libreBaskervile_normal.className,
-                  "text-lg sm:text-xl lg:text-xl text-left text-white"
+                  "text-sm sm:text-lg lg:text-xl text-left text-white"
                 )}
               >
                 Elevate your workwear with our Professional <br />
@@ -69,7 +69,8 @@ const ShopNow = () => {
               <div
                 className={classNames(
                   libreBaskervile_normal.className,
-                  buttonClass
+                  buttonClass,
+                  "flex justify-center items-center text-xs lg:text-base"
                 )}
               >
                 <Link href={"/shop"}>

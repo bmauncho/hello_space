@@ -4,7 +4,12 @@ import { Libre_Baskerville } from "next/font/google";
 import React from "react";
 import Image from "next/image";
 
-const libreBaskervile_normal = Libre_Baskerville({
+const libreBaskervile_normal_1 = Libre_Baskerville({
+  weight: "700",
+  style: "normal",
+  subsets: ["latin"],
+});
+const libreBaskervile_normal_2 = Libre_Baskerville({
   weight: "400",
   style: "normal",
   subsets: ["latin"],
@@ -25,25 +30,30 @@ const AboutUs = () => {
           />
         </div>
         {/* Text section */}
-        <div className="md:w-1/2 mt-8 md:mt-0">
+        <div className="w-full md:w-1/2 mt-8 md:mt-0">
           <div className="flex items-center mb-4">
             <h1
               className={classNames(
-                libreBaskervile_normal.className,
-                "text-4xl md:text-6xl xl:text-8xl font-bold text-white mt-12 text-center md:text-left"
+                libreBaskervile_normal_1.className,
+                "text-xl md:text-6xl xl:text-8xl font-bold text-white mt-12 text-center md:text-left"
               )}
             >
               About Us
             </h1>
           </div>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p
+            className={classNames(
+              "text-gray-600 text-base md:text-sm lg:text-lg leading-relaxed",
+              libreBaskervile_normal_2.className
+            )}
+          >
             Hello Space started as a small interior design firm in Nairobi,
             Kenya, aiming to help home buyers make do with the new space that
             they had acquired. It soon became obvious that it would make sense
             to help our clients see beyond the walls and floor plans, and be
             there with them from the get-go.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mt-4">
+          <p className="text-gray-600 text-base md:text-sm lg:text-lg leading-relaxed mt-4">
             Currently, we offer house realtor, interior design, and architecture
             services in order to help our customers find their forever homes as
             seamlessly and painlessly as possible. We value our customers above

@@ -29,7 +29,7 @@ const libreBaskervile_normal = Libre_Baskerville({
   subsets: ["latin"],
 });
 const libreBaskervile = Libre_Baskerville({
-  weight: "400",
+  weight: "700",
   style: "italic",
   subsets: ["latin"],
 });
@@ -81,17 +81,16 @@ const Hero = () => {
             everyday adventures
           </p>
         </div>
-        <div className={buttonClass}>
+        <div
+          className={classNames(
+            libreBaskervile.className,
+            buttonClass,
+            "flex justify-center items-center text-xs lg:text-base"
+          )}
+        >
           <Link href="/shop">
             <HeroBtn>
-              <p
-                className={classNames(
-                  baskervile.className,
-                  "justify-center items-center"
-                )}
-              >
-                Shop Now
-              </p>
+              <i>Shop Now</i>
             </HeroBtn>
           </Link>
         </div>
