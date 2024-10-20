@@ -17,9 +17,9 @@ const useScrollThreshold = () => {
       } else if (window.innerWidth >= 768) {
         newThreshold = 1200; // md
       } else if (window.innerWidth >= 640) {
-        newThreshold = 1000; // sm
+        newThreshold = 2900; // sm
       } else {
-        newThreshold = 500; // Default for smaller screens
+        newThreshold = 2900; // Default for smaller screens
       }
 
       setScrollThreshold(newThreshold);

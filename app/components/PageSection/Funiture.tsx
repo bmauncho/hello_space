@@ -5,6 +5,8 @@ import classNames from "classnames";
 import { Libre_Baskerville } from "next/font/google";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import useDeviceSize from "@/app/hooks/useDeviceSize";
+
 const buttonClass =
   "items-start mt-12 font-bold h-10 w-20 md:h-12 md:w-24 rounded-lg text-center text-white bg-[rgb(190,123,62)] transition-all delay-150 hover:bg-[rgb(155,106,61)] z-[1] hover:scale-125";
 const libreBaskervile = Libre_Baskerville({
@@ -18,17 +20,20 @@ const libreBaskervile_normal = Libre_Baskerville({
   subsets: ["latin"],
 });
 const Funiture = () => {
-  const BackgroundImage = "/images/funiture_bg.png";
+  const [scrolled, setScrolled] = useState(false); // const getWindowScrollPosition = () => ({
+  const getWindowScrollPosition = () => ({
+    x: window.scrollX,
+    y: window.scrollY,
+  });
 
-  const [scrolled, setScrolled] = useState(false);
-  // const getWindowScrollPosition = () => ({
-  //   x: window.scrollX,
-  //   y: window.scrollY,
-  // });
-
-  // getWindowScrollPosition();
-  // console.log(getWindowScrollPosition());
+  getWindowScrollPosition();
+  console.log(getWindowScrollPosition());
   const scrollThreshold = useScrollThreshold(); // Get the current scroll threshold
+  const isSmallScreen = useDeviceSize();
+  const backgroundImage = {
+    default: "/images/funiture_bg.png", // Default for mobile
+    md: "/images/fixedBg_2.png", // Medium screens and above
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +61,9 @@ const Funiture = () => {
           "fixed top-24 bg-cover bg-center bg-no-repeat min-h-screen w-full"
         )}
         style={{
-          backgroundImage: `url('${BackgroundImage}')`,
+          backgroundImage: `url('${
+            isSmallScreen ? backgroundImage.md : backgroundImage.default
+          }')`,
           opacity: scrolled ? 1 : 0,
           zIndex: -1,
           transition: "opacity 0.4s ease-in-out",
