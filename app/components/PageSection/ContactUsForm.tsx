@@ -26,10 +26,10 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="w-full lg:w-1/2 p-10 flex flex-col justify-start mb-0">
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block text-sm contact-info mb-2 text-gray-700">
+    <div className="w-full max-w-md mx-auto p-5 lg:max-w-2xl">
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="block text-sm contact-info mb-1 text-gray-700">
             Your Name
           </label>
           <input
@@ -41,8 +41,8 @@ const ContactForm: React.FC = () => {
             placeholder="Full Name"
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-sm contact-info mb-2 text-gray-700">
+        <div>
+          <label className="block text-sm contact-info mb-1 text-gray-700">
             Your Email
           </label>
           <input
@@ -54,8 +54,8 @@ const ContactForm: React.FC = () => {
             placeholder="Email"
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-sm contact-info mb-2 text-gray-700">
+        <div>
+          <label className="block text-sm contact-info mb-1 text-gray-700">
             Contact Number
           </label>
           <input
@@ -67,8 +67,8 @@ const ContactForm: React.FC = () => {
             placeholder="Contact Number"
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-sm contact-info mb-2 text-gray-700">
+        <div>
+          <label className="block text-sm contact-info mb-1 text-gray-700">
             Message
           </label>
           <textarea

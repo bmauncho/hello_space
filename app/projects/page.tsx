@@ -5,9 +5,9 @@ import Card from "../components/Cards/Card";
 
 const ProjectsPage = () => {
   return (
-    <div className="relative flex justify-center items-center min-h-screen bg-white">
-      <div className="flex flex-wrap space-x-4">
-        <div>
+    <div className="relative flex justify-center items-center min-h-screen bg-white px-4 md:px-8">
+      <div className="flex flex-wrap justify-center my-6 gap-4">
+        <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/3">
           <Card
             imageSrc="/images/Furniture_2.png"
             imageAlt="Project_1"
@@ -22,7 +22,7 @@ const ProjectsPage = () => {
             </div> */}
           </Card>
         </div>
-        <div>
+        <div className="w-full sm:w-1/2  md:w-1/4  lg:w-1/3">
           <Card
             imageSrc="/images/Project_2.png"
             imageAlt="Project_2"
@@ -37,12 +37,12 @@ const ProjectsPage = () => {
             </div> */}
           </Card>
         </div>
-        <div>
+        <div className="w-full sm:w-1/2  md:w-1/4 lg:w-1/3">
           <Card
             imageSrc="/images/Project_3.png"
             imageAlt="Project_3"
             title="Cozy Modern Loft"
-            description="Neutral tones, natural materials, and clean lines come together to form a calming, minimalist space with a serene, airy ambiance"
+            description="Neutral tones, natural materials, and clean lines come together to form a calming, minimalist space with a serene, airy ambiance."
             link="/"
           >
             {/* <div>

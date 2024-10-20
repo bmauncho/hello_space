@@ -3,7 +3,7 @@ import ContactUs from "../components/PageSection/ContactUs";
 
 const ContactUsPage = () => {
   return (
-    <div className="px-64">
+    <div className="lg:px-64">
       <ContactUs />
     </div>
   );

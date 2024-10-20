@@ -36,25 +36,25 @@ const FurniturePage = () => {
   };
 
   return (
-    <div className="relative px-64 py-6">
+    <div className="relative px-4 md:px-8 lg:px-16 xl:px-32 py-6">
       {/* Main Image */}
       <div className="relative flex justify-center items-center h-full w-full overflow-hidden rounded-lg">
-        <div className="h-1/2 w-1/2">
+        <div className="h-1/2 w-full md:w-2/3 lg:w-1/2">
           <Image
-            className={` rounded-lg transition-all duration-700 ease-in-out opacity-0 ${
+            className={`rounded-lg transition-all duration-700 ease-in-out opacity-0 ${
               fadeIn ? "opacity-100" : ""
             }`}
             src={images[currentIndex]}
             alt="Main"
-            layout="responsive" // Adjust based on how you want the image to scale
-            width={150} // Adjust width based on your needs
-            height={150} // Adjust height based on your needs
+            layout="responsive"
+            width={150} // Maintain aspect ratio
+            height={150} // Maintain aspect ratio
           />
         </div>
         {/* Previous Button */}
         <button
           type="button"
-          className="absolute top-0 left-0 z-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          className="absolute top-1/2 left-0 z-10 flex items-center justify-center h-full px-2 md:px-4 cursor-pointer group focus:outline-none transform -translate-y-1/2"
           onClick={prevImage}
         >
           <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 transition-all delay-150 group-hover:bg-[#d48a45] group-focus:outline-none hover:scale-125">
@@ -79,7 +79,7 @@ const FurniturePage = () => {
         {/* Next Button */}
         <button
           type="button"
-          className="absolute top-0 right-0 z-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          className="absolute top-1/2 right-0 z-10 flex items-center justify-center h-full px-2 md:px-4 cursor-pointer group focus:outline-none transform -translate-y-1/2"
           onClick={nextImage}
         >
           <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 transition-all delay-150 group-hover:bg-[#d48a45] group-focus:outline-none hover:scale-125">
@@ -102,18 +102,18 @@ const FurniturePage = () => {
         </button>
       </div>
       {/* Thumbnails */}
-      <div className="flex justify-between gap-4 mt-4 overflow-x-auto">
+      <div className="flex justify-between gap-2 mt-4 overflow-x-auto">
         {images.map((image, index) => (
-          <div key={index} className="relative w-1/5">
+          <div key={index} className="relative w-1/5 flex-shrink-0">
             <Image
               className={`h-auto rounded-lg cursor-pointer transition-transform duration-500 ease-in-out ${
                 currentIndex === index ? "border-4 border-[#ca803a]" : ""
               }`}
               src={image}
               alt={`Thumbnail ${index + 1}`}
-              layout="responsive" // To make it responsive
-              width={100} // Adjust the width accordingly
-              height={100} // Adjust the height accordingly
+              layout="responsive"
+              width={100} // Maintain aspect ratio
+              height={100} // Maintain aspect ratio
               onClick={() => {
                 setFadeIn(false); // Trigger fade-out
                 setTimeout(() => {

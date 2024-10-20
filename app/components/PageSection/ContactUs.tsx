@@ -53,48 +53,48 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="flex justify-center items-start min-h-screen mb-0">
-      <div className="w-full max-w-4xl flex flex-wrap p-10 items-start justify-center">
+    <div className="flex flex-col lg:flex-row justify-center items-start min-h-screen mb-0">
+      <div className="w-full lg:w-1/2 p-5 lg:p-10 flex flex-col justify-start">
         {/* Contact Details Section */}
-        <div className="w-full lg:w-1/2 p-10 flex flex-col justify-start">
-          <h1
-            className={classNames(
-              baskervile.className,
-              "text-4xl contact-title mb-8 text-left"
-            )}
-          >
-            Contact Details
-          </h1>
-          <div
-            className={classNames(
-              poppins.className,
-              "mb-12 flex flex-col space-y-12"
-            )}
-          >
-            {contactUsDetails.map((detail) => (
-              <div key={detail.id} className="flex flex-row items-center">
-                <div className="mr-4 bg-[#e6cac4] h-12 w-12 rounded-full flex justify-center items-center group transition-all delay-150 hover:scale-110">
-                  {/* Only wrap in <a> if there's an href */}
-                  {getHref(detail) ? (
-                    <a href={getHref(detail)} className="text-zinc-600">
-                      {detail.icon}
-                    </a>
-                  ) : (
-                    <span className="text-zinc-600">{detail.icon}</span>
-                  )}
-                </div>
-                <div>
-                  <h2 className="text-base tracking-[.25rem] text-zinc-600">
-                    {detail.title}
-                  </h2>
-                  <p>{detail.text}</p>
-                </div>
+        <h1
+          className={classNames(
+            baskervile.className,
+            "text-3xl lg:text-4xl contact-title mb-8 text-left"
+          )}
+        >
+          Contact Details
+        </h1>
+        <div
+          className={classNames(
+            poppins.className,
+            "lg:mb-12 flex flex-col space-y-8 lg:space-y-12"
+          )}
+        >
+          {contactUsDetails.map((detail) => (
+            <div key={detail.id} className="flex flex-row items-center">
+              <div className="mr-4 bg-[#e6cac4] h-12 w-12 rounded-full flex justify-center items-center group transition-all delay-150 hover:scale-110">
+                {/* Only wrap in <a> if there's an href */}
+                {getHref(detail) ? (
+                  <a href={getHref(detail)} className="text-zinc-600">
+                    {detail.icon}
+                  </a>
+                ) : (
+                  <span className="text-zinc-600">{detail.icon}</span>
+                )}
               </div>
-            ))}
-          </div>
+              <div>
+                <h2 className="text-base lg:text-lg tracking-[.25rem] text-zinc-600">
+                  {detail.title}
+                </h2>
+                <p className="text-sm lg:text-base">{detail.text}</p>
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
 
-        {/* Contact Form Section */}
+      {/* Contact Form Section */}
+      <div className="w-full lg:w-1/2 p-5 lg:p-10">
         <ContactUsForm />
       </div>
     </div>
