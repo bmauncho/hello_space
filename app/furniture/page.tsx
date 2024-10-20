@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import Image from "next/image";
 
 const FurniturePage = () => {
   const images = [
@@ -38,23 +39,27 @@ const FurniturePage = () => {
     <div className="relative px-64 py-6">
       {/* Main Image */}
       <div className="relative flex justify-center items-center h-full w-full overflow-hidden rounded-lg">
-        <img
-          className={`h-1/2 w-1/2 rounded-lg transition-all duration-700 ease-in-out opacity-0 ${
-            fadeIn ? "opacity-100" : ""
-          }`}
-          src={images[currentIndex]}
-          alt="Main"
-        />
-
+        <div className="h-1/2 w-1/2">
+          <Image
+            className={` rounded-lg transition-all duration-700 ease-in-out opacity-0 ${
+              fadeIn ? "opacity-100" : ""
+            }`}
+            src={images[currentIndex]}
+            alt="Main"
+            layout="responsive" // Adjust based on how you want the image to scale
+            width={150} // Adjust width based on your needs
+            height={150} // Adjust height based on your needs
+          />
+        </div>
         {/* Previous Button */}
         <button
           type="button"
           className="absolute top-0 left-0 z-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
           onClick={prevImage}
         >
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 transition-all delay-150 group-hover:bg-[#d48a45] group-focus:outline-none hover:scale-125">
             <svg
-              className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              className="w-4 h-4 text-white rtl:rotate-180"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 6 10"
@@ -77,9 +82,9 @@ const FurniturePage = () => {
           className="absolute top-0 right-0 z-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
           onClick={nextImage}
         >
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 transition-all delay-150 group-hover:bg-[#d48a45] group-focus:outline-none hover:scale-125">
             <svg
-              className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              className="w-4 h-4 text-white rtl:rotate-180"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 6 10"
@@ -96,25 +101,28 @@ const FurniturePage = () => {
           </span>
         </button>
       </div>
-
       {/* Thumbnails */}
       <div className="flex justify-between gap-4 mt-4 overflow-x-auto">
         {images.map((image, index) => (
-          <img
-            key={index}
-            className={`h-auto w-1/5 rounded-lg cursor-pointer transition-transform duration-500 ease-in-out ${
-              currentIndex === index ? "border-4 border-blue-500" : ""
-            }`}
-            src={image}
-            alt={`Thumbnail ${index + 1}`}
-            onClick={() => {
-              setFadeIn(false); // Trigger fade-out
-              setTimeout(() => {
-                setCurrentIndex(index);
-                setFadeIn(true); // Trigger fade-in after image changes
-              }, 300); // Match this delay to the fade-out duration
-            }}
-          />
+          <div key={index} className="relative w-1/5">
+            <Image
+              className={`h-auto rounded-lg cursor-pointer transition-transform duration-500 ease-in-out ${
+                currentIndex === index ? "border-4 border-[#ca803a]" : ""
+              }`}
+              src={image}
+              alt={`Thumbnail ${index + 1}`}
+              layout="responsive" // To make it responsive
+              width={100} // Adjust the width accordingly
+              height={100} // Adjust the height accordingly
+              onClick={() => {
+                setFadeIn(false); // Trigger fade-out
+                setTimeout(() => {
+                  setCurrentIndex(index);
+                  setFadeIn(true); // Trigger fade-in after image changes
+                }, 300); // Match this delay to the fade-out duration
+              }}
+            />
+          </div>
         ))}
       </div>
     </div>
