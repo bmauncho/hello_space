@@ -16,14 +16,22 @@ const Background = ({ children }: PropsWithChildren) => {
   const currentPath = usePathname(); // Call usePathname once at the top
 
   const handleMouseEnter = () => {
-    if (currentPath === "/") {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth >= 768 && currentPath === "/") {
       setBackgroundImage("/images/background.png");
+    } else if (screenWidth < 768 && currentPath === "/") {
+      setBackgroundImage("/images/phone-background.png");
     }
   };
 
   const handleMouseLeave = () => {
-    if (currentPath === "/") {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth >= 768 && currentPath === "/") {
       setBackgroundImage("/images/idle_bg.png");
+    } else if (screenWidth < 768 && currentPath === "/") {
+      setBackgroundImage("/images/phone-background_2.png");
     }
   };
 
@@ -33,7 +41,7 @@ const Background = ({ children }: PropsWithChildren) => {
         style={{
           backgroundImage: `url('${backgroundImage}')`,
           backgroundSize: "cover",
-          height: backgroundHeight,
+          height: backgroundHeight, // Default height
           width: "100%",
           transition: "background-image 0.5s ease, opacity 0.5s ease",
           opacity: 1,
@@ -41,6 +49,7 @@ const Background = ({ children }: PropsWithChildren) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
+        {/* Responsive Overlay */}
         <div
           style={{
             position: "absolute",
