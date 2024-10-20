@@ -13,15 +13,16 @@ interface ContactDetail {
 }
 
 const containerClass =
-  "flex flex-col items-center justify-center min-h-screen bg-[#e6cac4]";
-const headerClass = "text-4xl text-gray-700 mb-12";
-const contactDetailsClass = "flex space-x-8";
+  "flex flex-col items-center justify-center min-h-screen bg-[#e6cac4] p-4 sm:p-8"; // Added padding for small screens
+const headerClass = "text-3xl sm:text-4xl text-gray-700 mb-8 sm:mb-12"; // Adjusted font size for smaller screens
+const contactDetailsClass =
+  "flex flex-col sm:flex-row sm:space-x-8 space-y-8 sm:space-y-0"; // Stack vertically on small screens
 const contactItemClass =
-  "bg-white p-8 rounded-lg shadow-md flex flex-col items-center transition-all delay-150 hover:scale-110";
-const contactItemContentClass = "flex flex-col items-center space-y-4"; // new class
-const contactItemIconClass = "text-4xl mb-2 text-zinc-500"; // updated class
+  "bg-white p-6 sm:p-8 rounded-lg shadow-md flex flex-col items-center transition-all delay-150 hover:scale-105"; // Reduced padding for smaller screens
+const contactItemContentClass = "flex flex-col items-center space-y-4";
+const contactItemIconClass = "text-3xl sm:text-4xl mb-2 text-zinc-500"; // Smaller icons on small screens
 const contactItemTittle =
-  "text-xl text-[rgba(190,124,62,1)] mb-2 text-center w-64 ";
+  "text-lg sm:text-xl text-[rgba(190,124,62,1)] mb-2 text-center w-64";
 const contactItemLine = "border-gray-300 mb-2 w-12";
 const contactItemText =
   "text-[rgba(190,124,62,1)] text-center hover:text-zinc-600";

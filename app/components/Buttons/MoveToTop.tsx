@@ -28,13 +28,13 @@ const MoveToTop = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-10 right-10">
+    <div className=" fixed pr-2 bottom-10 right-8 md:right-15 md:bottom-12 md:pr-10">
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="bg-[rgba(190,124,62,1)] rounded-full h-12 w-12 flex items-center justify-center text-white shadow-lg hover:bg-[rgba(160,104,52,1)] transition-all delay-150 hover:scale-110 animate-bounce"
+          className="bg-[rgba(190,124,62,1)] rounded-full h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center text-white shadow-lg hover:bg-[rgba(160,104,52,1)] transition-all delay-150 hover:scale-105 sm:hover:scale-110 animate-bounce"
         >
-          <TiArrowUpThick className="text-white text-2xl" />
+          <TiArrowUpThick className="text-white text-xl sm:text-2xl" />
         </button>
       )}
     </div>
