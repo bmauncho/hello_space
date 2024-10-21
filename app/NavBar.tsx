@@ -79,7 +79,7 @@ const NavBar = () => {
             }
           )}
         >
-          <div className="flex justify-between items-center px-4 py-2 custom-740:px-8 custom-915:px-12 custom-932:px-12 lg:px-20  xl:px-24">
+          <div className="flex justify-between items-center px-4 py-2 custom-740:px-8 custom-915:px-12 custom-932:px-12 lg:px-12  xl:px-24">
             {/* Logo on the left */}
             <div className="flex items-center">
               <Link href="/" className="mr-auto">
@@ -101,7 +101,11 @@ const NavBar = () => {
             <div className="lg:hidden">
               <button
                 onClick={toggleMobileMenu}
-                className="text-zinc-600 focus:outline-none"
+                className={
+                  isMobileMenuOpen
+                    ? "text-zinc-600 focus:outline-none"
+                    : "text-white focus:outline-none"
+                }
               >
                 <svg
                   className="w-6 h-6"
@@ -162,7 +166,7 @@ const NavBar = () => {
                         "text-zinc-600": scrolled && link.href !== currentPath,
                         "text-[rgb(190,123,60)]":
                           !scrolled && link.href === currentPath,
-                        "text-zinc-300": !scrolled && link.href !== currentPath,
+                        "text-zinc-400": !scrolled && link.href !== currentPath,
                         "hover:text-[rgb(190,123,62)] transition-colors ease-out duration-400":
                           true,
                         "text-lg": !isMobileMenuOpen,

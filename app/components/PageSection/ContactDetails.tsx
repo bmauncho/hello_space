@@ -16,7 +16,7 @@ const containerClass =
   "flex flex-col items-center justify-center min-h-screen bg-[#e6cac4] p-4 sm:p-8"; // Added padding for small screens
 const headerClass = "text-3xl sm:text-4xl text-gray-700 mb-8 sm:mb-12"; // Adjusted font size for smaller screens
 const contactDetailsClass =
-  "flex flex-col sm:flex-row sm:space-x-8 space-y-8 sm:space-y-0"; // Stack vertically on small screens
+  "flex flex-col space-y-8 sm:flex-row sm:space-x-8 sm:space-y-0 md:flex-col md:space-x-0 md:space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8"; // Stack vertically on small screens
 const contactItemClass =
   "bg-white p-6 sm:p-8 rounded-lg shadow-md flex flex-col items-center transition-all delay-150 hover:scale-105"; // Reduced padding for smaller screens
 const contactItemContentClass = "flex flex-col items-center space-y-4";

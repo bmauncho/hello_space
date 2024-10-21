@@ -9,11 +9,11 @@ import Link from "next/link";
 const heroContainerClass_Main =
   "flex-col py-20 md:py-60 mb-2 z-[1] space-y-6 py-24"; // Adjust padding for responsiveness
 const heroContainerClass =
-  "flex-col space-y-12 px-4 sm:px-16 md:px-32 lg:px-64 py-2 max-sm:py-24 md:py-64 lg:py-24 xl:py-48  mb-12 z-[1]"; // Adjust padding for responsiveness
+  "flex-col space-y-12 px-4 sm:px-16 md:px-32 lg:px-64 py-2 max-sm:py-32 md:py-64 lg:py-24 xl:py-48  mb-12 z-[1]"; // Adjust padding for responsiveness
 const headingClass =
   "space-y-6 mt-12 text-4xl md:text-4xl lg:text-6xl leading-10 text-center text-[rgb(190,123,62)] z-[1]"; // Responsive text sizes
 const headingClass_2 =
-  "space-y-6 mt-12 text-4xl md:text-5xl lg:text-7xl text-center text-white z-[1]"; // Responsive text sizes
+  "space-y-6  max-sm:mt-24 text-4xl md:text-5xl lg:text-7xl text-center text-white z-[1]"; // Responsive text sizes
 const paragraphClass =
   "space-y-6 mt-12 text-center text-balance text-white text-sm sm:text-base md:text-base z-[1]"; // Responsive text sizes
 const buttonClass =

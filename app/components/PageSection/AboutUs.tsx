@@ -17,7 +17,7 @@ const libreBaskervile_normal_2 = Libre_Baskerville({
 
 const AboutUs = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#e6cac4] px-4 md:px-16 lg:px-32 xl:px-64">
+    <div className="flex justify-center items-center min-h-screen bg-[#e6cac4] px-4 md:px-12 lg:px-32 xl:px-64">
       <div className="flex flex-col my-6 md:flex-row items-center md:space-x-6 space-y-6 md:space-y-0">
         {/* Image section */}
         <div className="md:w-1/2 flex justify-center">

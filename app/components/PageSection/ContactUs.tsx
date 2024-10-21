@@ -54,7 +54,7 @@ const ContactUs = () => {
 
   return (
     <div className="flex flex-col lg:flex-row justify-center items-start min-h-screen mb-0">
-      <div className="w-full lg:w-1/2 p-5 lg:p-10 flex flex-col justify-start">
+      <div className="w-full md:w-3/4 lg:w-1/2 p-5 lg:p-10 flex flex-col justify-start md:justify-centre md:items-center">
         {/* Contact Details Section */}
         <h1
           className={classNames(

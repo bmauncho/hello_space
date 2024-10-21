@@ -48,8 +48,8 @@ const ShopNow = () => {
                 )}
               >
                 Professional
-                <br /> pinstripe blazers
-                <br /> collection
+                <br /> Pinstripe
+                <br /> Timeless Collections
               </h1>
             </div>
             <div>
@@ -59,10 +59,10 @@ const ShopNow = () => {
                   "text-sm sm:text-lg lg:text-xl text-left text-white"
                 )}
               >
-                Elevate your workwear with our Professional <br />
-                Pinstripe Blazers Collection, where tailored
-                <br /> sophistication meets modern confidence for
-                <br /> a powerfully polished office look.
+                Elevate your interiors with our Professional
+                <br /> Pinstripe Collection, where tailored <br />
+                sophistication meets modern design, bringing
+                <br /> a polished, confident ambiance to your workspace.
               </i>
             </div>
             <div className="flex">

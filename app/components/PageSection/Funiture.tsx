@@ -71,7 +71,7 @@ const Funiture = () => {
       <div className="flex lg:justify-end lg:items-end">
         {/*founder 1*/}
         <div className="absolute top-0 right-24 md:right-0 space-y-6 transform translate-x-40 lg:translate-x-0 -translate-y-1/3 md:-translate-y-1/3 z-2">
-          <div className="flex flex-col justify-center items-start space-y-6 lg:p-6 mr-24  min-h-screen mt-0 mb-6">
+          <div className="flex flex-col justify-center items-start space-y-6 p-12 max-sm:p-0 lg:p-6 mr-24 md:mr-36  min-h-screen mt-0 mb-6">
             <div className="flex">
               <Image
                 src="/images/Owner_1.png"
@@ -96,12 +96,12 @@ const Funiture = () => {
               <i
                 className={classNames(
                   libreBaskervile.className,
-                  " text-sm lg:text-xl font-normal text-left text-white "
+                  " text-sm  block lg:text-xl font-normal text-left text-white "
                 )}
               >
-                Dive into a world of style with our latest
-                <br /> collection! Shop now and redefine your
-                <br /> wardrobe narrative!
+                Dive into a world of style with our <br />
+                latest collection! Shop now and <br /> redefine your wardrobe
+                narrative!
               </i>
             </div>
             <div className="flex"></div>
@@ -134,12 +134,12 @@ const Funiture = () => {
             <i
               className={classNames(
                 libreBaskervile.className,
-                "text-sm lg:text-xl font-normal text-left text-white "
+                "text-sm block lg:text-xl font-normal text-left text-white "
               )}
             >
-              Dive into a world of style with our latest
-              <br /> collection! Shop now and redefine your
-              <br /> wardrobe narrative!
+              Dive into a world of style with our <br /> latest collection! Shop
+              now and <br />
+              redefine your wardrobe narrative!
             </i>
           </div>
           <div className="flex justify-start">
