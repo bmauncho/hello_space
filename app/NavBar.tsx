@@ -101,11 +101,13 @@ const NavBar = () => {
             <div className="lg:hidden">
               <button
                 onClick={toggleMobileMenu}
-                className={
+                className={`focus:outline-none ${
                   isMobileMenuOpen
-                    ? "text-zinc-600 focus:outline-none"
-                    : "text-white focus:outline-none"
-                }
+                    ? "text-zinc-600"
+                    : scrolled
+                    ? "text-zinc-600"
+                    : "text-white"
+                }`}
               >
                 <svg
                   className="w-6 h-6"
