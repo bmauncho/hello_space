@@ -53,7 +53,12 @@ const AboutUs = () => {
             to help our clients see beyond the walls and floor plans, and be
             there with them from the get-go.
           </p>
-          <p className="text-gray-600 text-base md:text-sm lg:text-lg leading-relaxed mt-4">
+          <p
+            className={classNames(
+              libreBaskervile_normal_2.className,
+              "text-gray-600 text-base md:text-sm lg:text-lg leading-relaxed mt-4"
+            )}
+          >
             Currently, we offer house realtor, interior design, and architecture
             services in order to help our customers find their forever homes as
             seamlessly and painlessly as possible. We value our customers above
