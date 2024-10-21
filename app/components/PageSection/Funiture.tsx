@@ -25,16 +25,10 @@ const libreBaskervile_normal = Libre_Baskerville({
   subsets: ["latin"],
 });
 const Funiture = () => {
-  const [scrolled, setScrolled] = useState(false); // const getWindowScrollPosition = () => ({
-  const getWindowScrollPosition = () => ({
-    x: window.scrollX,
-    y: window.scrollY,
-  });
-
-  getWindowScrollPosition();
-  console.log(getWindowScrollPosition());
-  const scrollThreshold = useScrollThreshold(); // Get the current scroll threshold
+  const [scrolled, setScrolled] = useState(false);
+  const scrollThreshold = useScrollThreshold();
   const isSmallScreen = useDeviceSize();
+
   const backgroundImage = {
     default: "/images/funiture_bg.png", // Default for mobile
     md: "/images/fixedBg_2.png", // Medium screens and above

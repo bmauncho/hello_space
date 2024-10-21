@@ -32,7 +32,7 @@ const NavBar = () => {
   useEffect(() => {
     // Check if the screen is mobile-sized
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 1024);
+      setIsMobile(window.innerWidth < 1080);
     };
 
     checkScreenSize();
@@ -79,7 +79,7 @@ const NavBar = () => {
             }
           )}
         >
-          <div className="flex justify-between items-center px-4 py-2 custom-740:px-8 custom-915:px-12 custom-932:px-12 lg:px-20">
+          <div className="flex justify-between items-center px-4 py-2 custom-740:px-8 custom-915:px-12 custom-932:px-12 lg:px-20  xl:px-24">
             {/* Logo on the left */}
             <div className="flex items-center">
               <Link href="/" className="mr-auto">
@@ -89,8 +89,9 @@ const NavBar = () => {
                   width={125}
                   height={125}
                   className={classNames({
-                    "w-16 h-16 lg:w-32 lg:h-32": !isMobileMenuOpen,
-                    "w-10 h-10 ": isMobileMenuOpen,
+                    "w-16 h-16 xl:w-64 xl:h-64 2xl:w-125 2xl:w-auto 2xl:h-auto":
+                      !isMobileMenuOpen,
+                    "w-10 h-10 lg:w-auto lg:h-auto ": isMobileMenuOpen,
                   })} // Responsive logo size for mobile and desktop
                 />
               </Link>
