@@ -4,6 +4,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { PiMapPinLineFill } from "react-icons/pi";
 import { Baskervville } from "next/font/google";
 import classNames from "classnames";
+import useFonts from "@/app/hooks/useFonts";
 
 interface ContactDetail {
   id: number;
@@ -26,13 +27,16 @@ const contactItemTittle =
 const contactItemLine = "border-gray-300 mb-2 w-12";
 const contactItemText =
   "text-[rgba(190,124,62,1)] text-center hover:text-zinc-600";
-const baskervile = Baskervville({
-  weight: "400",
-  style: "normal",
-  subsets: ["latin"],
-});
 
 const ContactDetails = () => {
+  const {
+    libreBaskervilleItalic,
+    libreBaskervilleBoldItalic,
+    libreBaskervilleBold,
+    libreBaskervilleNormal,
+    poppins,
+    baskervville,
+  } = useFonts();
   const contactDetails: ContactDetail[] = [
     {
       id: 1,
@@ -56,7 +60,7 @@ const ContactDetails = () => {
 
   return (
     <div className={containerClass}>
-      <h1 className={classNames(baskervile.className, headerClass)}>
+      <h1 className={classNames(baskervville.className, headerClass)}>
         Contact Details
       </h1>
       <div className={contactDetailsClass}>
@@ -74,7 +78,7 @@ const ContactDetails = () => {
           return (
             <div
               key={detail.id}
-              className={classNames(baskervile.className, contactItemClass)}
+              className={classNames(baskervville.className, contactItemClass)}
             >
               <div className={contactItemContentClass}>
                 <i
@@ -87,7 +91,7 @@ const ContactDetails = () => {
                 </i>
                 <h2
                   className={classNames(
-                    baskervile.className,
+                    baskervville.className,
                     contactItemTittle
                   )}
                 >
@@ -102,7 +106,7 @@ const ContactDetails = () => {
                       ? `tel:${detail.text}`
                       : undefined
                   }
-                  className={classNames(baskervile.className, {
+                  className={classNames(baskervville.className, {
                     [contactItemText]: detail.id !== 3,
                     "text-zinc-600": detail.id === 3,
                   })}

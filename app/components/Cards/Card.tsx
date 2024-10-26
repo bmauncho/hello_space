@@ -2,6 +2,7 @@ import React, { PropsWithChildren } from "react";
 import Image from "next/image"; // Import the Next.js Image component
 import { Poppins } from "next/font/google";
 import classNames from "classnames";
+import useFonts from "@/app/hooks/useFonts";
 
 interface CardProps {
   imageSrc: string;
@@ -10,7 +11,6 @@ interface CardProps {
   description: string;
   link: string;
 }
-const poppins = Poppins({ weight: "400", style: "normal", subsets: ["latin"] });
 
 const Card: React.FC<PropsWithChildren<CardProps>> = ({
   imageSrc,
@@ -20,6 +20,14 @@ const Card: React.FC<PropsWithChildren<CardProps>> = ({
   link,
   children,
 }) => {
+  const {
+    libreBaskervilleItalic,
+    libreBaskervilleBoldItalic,
+    libreBaskervilleBold,
+    libreBaskervilleNormal,
+    poppins,
+    baskervville,
+  } = useFonts();
   return (
     <div className="max-w-sm bg-white rounded-lg shadow dark:bg-gray-800">
       <a href={link}>

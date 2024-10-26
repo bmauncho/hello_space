@@ -6,25 +6,19 @@ import { Libre_Baskerville } from "next/font/google";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import useDeviceSize from "@/app/hooks/useDeviceSize";
+import useFonts from "@/app/hooks/useFonts";
 
 const buttonClass =
   "items-start mt-12 font-bold h-10 w-20 md:h-12 md:w-24 rounded-lg text-center text-white bg-[rgb(190,123,62)] transition-all delay-150 hover:bg-[rgb(155,106,61)] z-[1] hover:scale-125";
-const libreBaskervile_bold = Libre_Baskerville({
-  weight: "700",
-  style: "italic",
-  subsets: ["latin"],
-});
-const libreBaskervile = Libre_Baskerville({
-  weight: "400",
-  style: "italic",
-  subsets: ["latin"],
-});
-const libreBaskervile_normal = Libre_Baskerville({
-  weight: "400",
-  style: "normal",
-  subsets: ["latin"],
-});
 const Funiture = () => {
+  const {
+    libreBaskervilleItalic,
+    libreBaskervilleBoldItalic,
+    libreBaskervilleBold,
+    libreBaskervilleNormal,
+    poppins,
+    baskervville,
+  } = useFonts();
   const [scrolled, setScrolled] = useState(false);
   const scrollThreshold = useScrollThreshold();
   const isSmallScreen = useDeviceSize();
@@ -84,7 +78,7 @@ const Funiture = () => {
             <div className="">
               <h1
                 className={classNames(
-                  libreBaskervile_bold.className,
+                  libreBaskervilleBoldItalic.className,
                   "text-xl lg:text-3xl font-normal text-left text-white"
                 )}
               >
@@ -95,7 +89,7 @@ const Funiture = () => {
 
               <i
                 className={classNames(
-                  libreBaskervile.className,
+                  libreBaskervilleItalic.className,
                   " text-sm  block lg:text-xl font-normal text-left text-white "
                 )}
               >
@@ -122,7 +116,7 @@ const Funiture = () => {
           <div>
             <h1
               className={classNames(
-                libreBaskervile_bold.className,
+                libreBaskervilleBoldItalic.className,
                 "text-xl lg:text-3xl font-normal text-left text-white"
               )}
             >
@@ -133,7 +127,7 @@ const Funiture = () => {
 
             <i
               className={classNames(
-                libreBaskervile.className,
+                libreBaskervilleItalic.className,
                 "text-sm block lg:text-xl font-normal text-left text-white "
               )}
             >
@@ -146,7 +140,7 @@ const Funiture = () => {
             <Link href="/furniture">
               <div
                 className={classNames(
-                  libreBaskervile_normal.className,
+                  libreBaskervilleNormal.className,
                   buttonClass,
                   "flex justify-center items-center" // Add these classes for centering
                 )}

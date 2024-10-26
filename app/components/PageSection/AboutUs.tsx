@@ -3,19 +3,17 @@ import classNames from "classnames";
 import { Libre_Baskerville } from "next/font/google";
 import React from "react";
 import Image from "next/image";
-
-const libreBaskervile_normal_1 = Libre_Baskerville({
-  weight: "700",
-  style: "normal",
-  subsets: ["latin"],
-});
-const libreBaskervile_normal_2 = Libre_Baskerville({
-  weight: "400",
-  style: "normal",
-  subsets: ["latin"],
-});
+import useFonts from "@/app/hooks/useFonts";
 
 const AboutUs = () => {
+  const {
+    libreBaskervilleItalic,
+    libreBaskervilleBoldItalic,
+    libreBaskervilleBold,
+    libreBaskervilleNormal,
+    poppins,
+    baskervville,
+  } = useFonts();
   return (
     <div className="flex justify-center items-center min-h-screen bg-[#e6cac4] px-4 md:px-12 lg:px-32 xl:px-64">
       <div className="flex flex-col my-6 md:flex-row items-center md:space-x-6 space-y-6 md:space-y-0">
@@ -34,7 +32,7 @@ const AboutUs = () => {
           <div className="flex items-center mb-4">
             <h1
               className={classNames(
-                libreBaskervile_normal_1.className,
+                libreBaskervilleBold.className,
                 "text-xl md:text-6xl xl:text-8xl font-bold text-white mt-12 text-center md:text-left"
               )}
             >
@@ -44,7 +42,7 @@ const AboutUs = () => {
           <p
             className={classNames(
               "text-gray-600 text-base md:text-sm lg:text-lg leading-relaxed",
-              libreBaskervile_normal_2.className
+              libreBaskervilleNormal.className
             )}
           >
             Hello Space started as a small interior design firm in Nairobi,
@@ -55,7 +53,7 @@ const AboutUs = () => {
           </p>
           <p
             className={classNames(
-              libreBaskervile_normal_2.className,
+              libreBaskervilleNormal.className,
               "text-gray-600 text-base md:text-sm lg:text-lg leading-relaxed mt-4"
             )}
           >
