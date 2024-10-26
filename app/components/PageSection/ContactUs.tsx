@@ -5,13 +5,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { PiMapPinLineFill } from "react-icons/pi";
 import classNames from "classnames";
 import ContactUsForm from "./ContactUsForm";
-
-const poppins = Poppins({ weight: "400", style: "normal", subsets: ["latin"] });
-const baskervile = Baskervville({
-  weight: "400",
-  style: "normal",
-  subsets: ["latin"],
-});
+import useFonts from "@/app/hooks/useFonts";
 
 interface ContactUsDetails {
   id: number;
@@ -21,6 +15,14 @@ interface ContactUsDetails {
 }
 
 const ContactUs = () => {
+  const {
+    libreBaskervilleItalic,
+    libreBaskervilleBoldItalic,
+    libreBaskervilleBold,
+    libreBaskervilleNormal,
+    poppins,
+    baskervville,
+  } = useFonts();
   const contactUsDetails: ContactUsDetails[] = [
     {
       id: 1,
@@ -58,7 +60,7 @@ const ContactUs = () => {
         {/* Contact Details Section */}
         <h1
           className={classNames(
-            baskervile.className,
+            baskervville.className,
             "text-3xl lg:text-4xl contact-title mb-8 text-left"
           )}
         >

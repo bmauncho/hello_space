@@ -6,20 +6,19 @@ import Link from "next/link";
 import { Libre_Baskerville } from "next/font/google";
 import classNames from "classnames";
 import useDeviceSize from "@/app/hooks/useDeviceSize";
+import useFonts from "@/app/hooks/useFonts";
 const buttonClass =
   "mt-6 md:mt-12 font-bold h-10 w-32 md:h-12 md:w-36 rounded-lg text-center text-white bg-[rgb(190,123,62)] transition-all delay-150 hover:bg-[rgb(155,106,61)] z-[1] hover:scale-125";
-const libreBaskervile_normal = Libre_Baskerville({
-  weight: "400",
-  style: "normal",
-  subsets: ["latin"],
-});
-const libreBaskervile = Libre_Baskerville({
-  weight: "400",
-  style: "italic",
-  subsets: ["latin"],
-});
 
 const Projects = () => {
+  const {
+    libreBaskervilleItalic,
+    libreBaskervilleBoldItalic,
+    libreBaskervilleBold,
+    libreBaskervilleNormal,
+    poppins,
+    baskervville,
+  } = useFonts();
   const isSmallScreen = useDeviceSize();
   const backgroundImage = {
     default: "/images/page_bg.png", // Default for mobile
@@ -51,7 +50,7 @@ const Projects = () => {
           <div>
             <h1
               className={classNames(
-                libreBaskervile.className,
+                libreBaskervilleItalic.className,
                 "text-xl md:text-2xl font-normal text-center text-white"
               )}
             >
@@ -63,7 +62,7 @@ const Projects = () => {
           <div
             className={classNames(
               buttonClass,
-              libreBaskervile_normal.className,
+              libreBaskervilleNormal.className,
               "flex justify-center items-center"
             )}
           >

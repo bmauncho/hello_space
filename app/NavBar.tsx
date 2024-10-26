@@ -6,17 +6,17 @@ import classNames from "classnames";
 import Image from "next/image";
 import { Libre_Baskerville, Poppins } from "next/font/google";
 import NavBarBtn from "./components/Buttons/NavBarBtn";
-
-const poppins = Poppins({ weight: "400", style: "normal", subsets: ["latin"] });
-const libreBaskervile_normal = Libre_Baskerville({
-  weight: "400",
-  style: "normal",
-  subsets: ["latin"],
-});
+import useFonts from "./hooks/useFonts";
 
 const NavBar = () => {
   const currentPath = usePathname();
-
+  const {
+    libreBaskervilleItalic,
+    libreBaskervilleBold,
+    libreBaskervilleNormal,
+    poppins,
+    baskervville,
+  } = useFonts();
   const links = [
     { label: "Home", href: "/" },
     { label: "Projects", href: "/projects" },
@@ -148,7 +148,7 @@ const NavBar = () => {
                       <NavBarBtn isMobileMenuOpen={isMobileMenuOpen}>
                         <i
                           className={classNames(
-                            libreBaskervile_normal.className,
+                            libreBaskervilleNormal.className,
                             {
                               "font-bold text-lg": !isMobileMenuOpen,
                               "font-bold text-xs": isMobileMenuOpen,

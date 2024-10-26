@@ -6,10 +6,9 @@ import { IoLogoTwitter } from "react-icons/io5";
 import { TiSocialFacebook } from "react-icons/ti";
 import { BsInstagram } from "react-icons/bs";
 import { BiLogoTiktok } from "react-icons/bi";
-import { Poppins } from "next/font/google";
 import classNames from "classnames";
+import useFonts from "./hooks/useFonts";
 
-const poppins = Poppins({ weight: "400", style: "normal", subsets: ["latin"] });
 const containerClass = "flex flex-col space-y-12 px-4 md:px-32 lg:px-64";
 const logoIconClass = "flex flex-col justify-center items-center";
 const iconClass =
@@ -25,6 +24,13 @@ const Footer = () => {
     });
   };
 
+  const {
+    libreBaskervilleItalic,
+    libreBaskervilleBold,
+    libreBaskervilleNormal,
+    poppins,
+    baskervville,
+  } = useFonts();
   return (
     <div className="p-5 bg-white">
       <div className={containerClass}>

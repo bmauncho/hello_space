@@ -5,6 +5,7 @@ import classNames from "classnames";
 import { usePathname } from "next/navigation";
 import usePageName from "../../hooks/usePageName";
 import Link from "next/link";
+import useFonts from "@/app/hooks/useFonts";
 
 const heroContainerClass_Main =
   "flex-col py-20 md:py-60 mb-2 z-[1] space-y-6 py-24"; // Adjust padding for responsiveness
@@ -19,25 +20,17 @@ const paragraphClass =
 const buttonClass =
   "mt-12 font-bold h-10 w-20 md:h-12 md:w-24 rounded-lg text-white bg-[rgb(190,123,62)] transition-all delay-150 hover:bg-[rgb(155,106,61)] z-[1] hover:scale-125";
 
-const libreBaskervile_normal = Libre_Baskerville({
-  weight: "400",
-  style: "normal",
-  subsets: ["latin"],
-});
-const libreBaskervile_bold = Libre_Baskerville({
-  weight: "700",
-  style: "italic",
-  subsets: ["latin"],
-});
-const libreBaskervile = Libre_Baskerville({
-  weight: "400",
-  style: "italic",
-  subsets: ["latin"],
-});
-
 const Hero = () => {
   const currentPath = usePathname();
   const pageName = usePageName();
+  const {
+    libreBaskervilleItalic,
+    libreBaskervilleBoldItalic,
+    libreBaskervilleBold,
+    libreBaskervilleNormal,
+    poppins,
+    baskervville,
+  } = useFonts();
   // Only return content if the path is the homepage
   if (currentPath !== "/") {
     return (
@@ -46,7 +39,7 @@ const Hero = () => {
           <h1
             className={classNames(
               headingClass_2,
-              libreBaskervile_bold.className
+              libreBaskervilleBold.className
             )}
           >
             {pageName}
@@ -63,7 +56,7 @@ const Hero = () => {
           <p
             className={classNames(
               paragraphClass,
-              libreBaskervile_normal.className
+              libreBaskervilleNormal.className
             )}
           >
             Casual & Everyday
@@ -71,14 +64,17 @@ const Hero = () => {
         </div>
         <div className="z-[1]">
           <h1
-            className={classNames(headingClass, libreBaskervile_bold.className)}
+            className={classNames(
+              headingClass,
+              libreBaskervilleBoldItalic.className
+            )}
           >
             Effortlessly blend comfort <br />& style!
           </h1>
           <p
             className={classNames(
               paragraphClass,
-              libreBaskervile_normal.className
+              libreBaskervilleNormal.className
             )}
           >
             Effortlessly blend comfort and style with our Casual & Everyday
@@ -88,7 +84,7 @@ const Hero = () => {
         </div>
         <div
           className={classNames(
-            libreBaskervile.className,
+            libreBaskervilleItalic.className,
             buttonClass,
             "flex justify-center items-center text-xs lg:text-base"
           )}
