@@ -2,7 +2,7 @@ import Projects from "./components/PageSection/Projects";
 import ContactDetails from "./components/PageSection/ContactDetails";
 import AboutUs from "./components/PageSection/AboutUs";
 import ShopNow from "./components/PageSection/ShopNow";
-import Funiture from "./components/PageSection/Funiture";
+import Furniture from "./components/PageSection/Funiture";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
         <AboutUs />
         <Projects />
         <ShopNow />
-        <Funiture />
+        <Furniture />
         <ContactDetails />
       </div>
     </div>
